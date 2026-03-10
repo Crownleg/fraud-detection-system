@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<title>Fraud Detection Dashboard</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background:#f4f6f9;
+margin:0;
+}
+
+header{
+background:#1f3c88;
+color:white;
+padding:20px;
+text-align:center;
+font-size:24px;
+}
+
+.container{
+width:400px;
+margin:40px auto;
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0px 0px 10px rgba(0,0,0,0.2);
+}
+
+label{
+font-weight:bold;
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:5px;
+margin-bottom:15px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#1f3c88;
+color:white;
+border:none;
+border-radius:5px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#162f6b;
+}
+
+.result{
+text-align:center;
+margin-top:20px;
+font-size:20px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+AI Online Banking Fraud Detection System
+</header>
+
+<div class="container">
+
+<h2>Check Transaction</h2>
+
+<form action="/predict" method="post">
+
+<label>Transaction Amount</label>
+<input type="number" name="amount" required>
+
+<label>Location Code</label>
+<input type="number" name="location" required>
+
+<label>Transaction Time</label>
+<input type="number" name="time" required>
+
+<label>Device Type</label>
+<input type="number" name="device" required>
+
+<button type="submit">Analyze Transaction</button>
+
+</form>
+
+<div class="result">
+{{ prediction_text }}
+</div>
+
+</div>
+
+</body>
+
+</html>
